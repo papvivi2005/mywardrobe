@@ -192,7 +192,6 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
 .outfit-thumbs img:first-child { grid-column: 1 / -1; }
 .outfit-details { min-width: 0; }
 .outfit-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; font-weight: 700; }
-.outfit-subtitle { display: block; margin-top: 4px; color: #93978f; font-size: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .empty-state { text-align: center; padding: 28px 12px 24px; color: #7d847b; }
 .empty-symbol { display: grid; place-items: center; width: 34px; height: 34px; margin: 0 auto 10px; border: 1px solid #e5dfc9; border-radius: 50%; color: #bd9852; }
 .empty-state strong { display: block; color: #525c52; font-family: var(--serif); font-weight: 500; font-size: 15px; }

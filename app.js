@@ -541,10 +541,7 @@ function renderOutfits() {
     const title = document.createElement("span");
     title.className = "outfit-title";
     title.textContent = outfitName(outfit, index);
-    const subtitle = document.createElement("span");
-    subtitle.className = "outfit-subtitle";
-    subtitle.textContent = `${outfit.top.name} · ${outfit.bottom.name} · ${outfit.shoes.name}`;
-    details.append(title, subtitle);
+    details.append(title);
     button.append(thumbs, details);
     elements.outfitList.append(button);
   }
