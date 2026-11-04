@@ -36,14 +36,22 @@ button:focus-visible, a:focus-visible, label:focus-within, select:focus-visible 
 .home-hero { position: relative; min-height: clamp(490px, calc(80svh - 130px), 650px); overflow: hidden; display: flex; align-items: center; border: 2px solid var(--ink); background: var(--orange); color: #fff; isolation: isolate; }
 .home-collage, .home-hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .home-collage { z-index: 0; overflow: hidden; background: var(--orange); }
-.collage-dot-field { position: absolute; inset: 0; background-image: radial-gradient(var(--cyan) 7px, transparent 7.5px), radial-gradient(var(--yellow) 4px, transparent 4.5px); background-position: 0 0, 17px 19px; background-size: 38px 38px, 38px 38px; }
-.collage-image { position: absolute; display: block; object-fit: cover; filter: saturate(1.35) contrast(1.06); }
-.collage-main { top: 4%; right: 5%; width: 53%; height: 92%; object-position: center 24%; border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--green); }
-.collage-panel { z-index: 1; border: 3px solid var(--ink); }
-.collage-yellow { top: 7%; right: 34%; width: 22%; height: 37%; transform: rotate(4deg); box-shadow: 7px 7px 0 var(--pink); }
-.collage-graffiti { top: 41%; right: 34%; width: 21%; height: 38%; transform: rotate(-4deg); border-color: var(--yellow); box-shadow: 7px 7px 0 var(--blue); }
-.collage-flatlay { right: 5%; bottom: 5%; width: 27%; height: 30%; transform: rotate(3deg); border-color: var(--green); box-shadow: 7px 7px 0 var(--pink); }
-.collage-stamp { position: absolute; z-index: 2; top: 50%; right: 21%; padding: 9px 12px 7px; border: 2px solid var(--ink); background: var(--pink); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: .95; transform: rotate(6deg); }
+.collage-dot-field { position: absolute; inset: 0; opacity: .8; background-image: radial-gradient(var(--cyan) 7px, transparent 7.5px), radial-gradient(var(--yellow) 4px, transparent 4.5px); background-position: 0 0, 17px 19px; background-size: 38px 38px, 38px 38px; }
+.collage-image { position: absolute; display: block; object-fit: cover; filter: saturate(1.5) contrast(1.1); }
+.collage-main { top: -3%; right: 2%; width: 58%; height: 105%; object-position: center 24%; clip-path: polygon(8% 0, 100% 2%, 96% 100%, 0 94%); }
+.collage-panel { z-index: 1; border: 4px solid #fff; filter: saturate(1.55) contrast(1.1) drop-shadow(4px 5px 0 var(--ink)); }
+.collage-yellow { top: 2%; right: 4%; width: 24%; height: 38%; transform: rotate(5deg); clip-path: polygon(4% 0, 100% 4%, 96% 100%, 0 94%); filter: saturate(1.6) contrast(1.12) drop-shadow(4px 5px 0 var(--pink)); }
+.collage-graffiti { top: 38%; right: 32%; width: 23%; height: 40%; transform: rotate(-7deg); clip-path: polygon(8% 0, 100% 5%, 92% 100%, 0 91%); filter: saturate(1.3) contrast(1.08) drop-shadow(5px 6px 0 var(--yellow)); }
+.collage-flatlay { right: 3%; bottom: 2%; width: 30%; height: 31%; transform: rotate(4deg); clip-path: polygon(0 5%, 94% 0, 100% 96%, 5% 100%); filter: saturate(1.4) contrast(1.06) drop-shadow(5px 5px 0 var(--blue)); }
+.collage-type { position: absolute; z-index: 2; top: 38%; right: 8%; color: var(--yellow); font-family: var(--serif); font-size: 42px; line-height: .8; -webkit-text-stroke: 1px var(--ink); text-shadow: 4px 5px 0 var(--pink); transform: rotate(7deg); }
+.collage-palette { position: absolute; z-index: 2; top: 4%; right: 30%; display: flex; align-items: center; gap: 3px; padding: 5px 6px; border: 2px solid var(--ink); background: #fff; transform: rotate(-4deg); }
+.collage-palette span { padding: 0 5px 0 1px; color: var(--ink); font-size: 7px; font-weight: 700; white-space: nowrap; }
+.collage-palette i { width: 12px; height: 19px; background: var(--pink); }
+.collage-palette i:nth-of-type(2) { background: var(--yellow); }
+.collage-palette i:nth-of-type(3) { background: var(--cyan); }
+.collage-palette i:nth-of-type(4) { background: var(--green); }
+.collage-palette i:nth-of-type(5) { background: var(--orange); }
+.collage-stamp { position: absolute; z-index: 2; top: 62%; right: 22%; padding: 8px 10px 6px; border: 2px solid var(--ink); background: var(--pink); color: var(--ink); font-family: var(--serif); font-size: 15px; line-height: .95; transform: rotate(-8deg); }
 .home-hero-shade { z-index: 2; background: linear-gradient(90deg, rgba(15,15,25,.9) 0%, rgba(15,15,25,.78) 38%, rgba(15,15,25,.2) 64%, rgba(15,15,25,.04) 100%); }
 .home-hero-content { position: relative; z-index: 3; width: min(650px, 62%); padding: 52px 0 52px 48px; }
 .home-kicker { display: flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.4px; }
@@ -244,11 +252,13 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .home-hero { min-height: 590px; min-height: max(590px, calc(100svh - 140px)); align-items: flex-end; }
   .home-hero-content { width: 100%; padding: 35px 28px 44px; }
   .home-hero h1 { font-size: 52px; }
-  .collage-main { right: 4%; width: 54%; height: 68%; top: 3%; }
-  .collage-yellow { top: 6%; right: 34%; width: 27%; height: 29%; }
-  .collage-graffiti { top: 35%; right: 32%; width: 26%; height: 29%; }
-  .collage-flatlay { right: 4%; bottom: 28%; width: 31%; height: 24%; }
-  .collage-stamp { top: 38%; right: 8%; font-size: 13px; }
+  .collage-main { right: 2%; width: 58%; height: 65%; top: 2%; }
+  .collage-yellow { top: 5%; right: 3%; width: 30%; height: 26%; }
+  .collage-graffiti { top: 30%; right: 30%; width: 28%; height: 27%; }
+  .collage-flatlay { right: 3%; bottom: 28%; width: 36%; height: 22%; }
+  .collage-type { top: 30%; right: 6%; font-size: 30px; }
+  .collage-palette { top: 5%; right: 34%; transform: rotate(-4deg) scale(.8); transform-origin: top right; }
+  .collage-stamp { top: 48%; right: 8%; font-size: 12px; }
   .home-sticker { top: 18px; right: 18px; }
   .home-step-grid { gap: 8px; }
   .home-step { min-height: 205px; padding: 11px; }
@@ -278,11 +288,13 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .tryon-section { padding: 11px; }
   .tryon-stage { height: 112vw; max-height: 490px; min-height: 340px; }
   .home-hero { min-height: max(590px, calc(100svh - 125px)); align-items: flex-end; }
-  .collage-main { top: 3%; right: 5%; width: 58%; height: 59%; object-position: 52% center; }
-  .collage-yellow { top: 6%; right: 33%; width: 30%; height: 24%; }
-  .collage-graffiti { top: 29%; right: 34%; width: 28%; height: 23%; }
-  .collage-flatlay { right: 5%; bottom: 35%; width: 35%; height: 20%; }
-  .collage-stamp { top: 34%; right: 8%; padding: 6px 8px 5px; font-size: 11px; }
+  .collage-main { top: 2%; right: 2%; width: 62%; height: 56%; object-position: 52% center; }
+  .collage-yellow { top: 5%; right: 3%; width: 34%; height: 22%; }
+  .collage-graffiti { top: 25%; right: 31%; width: 31%; height: 21%; }
+  .collage-flatlay { right: 3%; bottom: 34%; width: 39%; height: 18%; }
+  .collage-type { top: 26%; right: 4%; font-size: 23px; }
+  .collage-palette { top: 5%; right: 34%; transform: rotate(-4deg) scale(.65); }
+  .collage-stamp { top: 41%; right: 6%; padding: 5px 7px 4px; font-size: 10px; }
   .home-hero-shade { background: linear-gradient(0deg, rgba(15,15,25,.94) 0%, rgba(15,15,25,.8) 44%, rgba(15,15,25,.3) 68%, rgba(15,15,25,.1) 100%); }
   .home-hero-content { padding: 30px 19px 36px; }
   .home-kicker { font-size: 8px; letter-spacing: 1px; }
