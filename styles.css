@@ -33,7 +33,7 @@ button:focus-visible, a:focus-visible, label:focus-within, select:focus-visible 
 .nav-item { width: 100%; border: 0; background: transparent; font-family: var(--sans); text-align: left; cursor: pointer; }
 .nav-item.active { background: var(--green); color: var(--ink); }
 .tab-view[hidden] { display: none; }
-.home-hero { position: relative; min-height: min(700px, calc(100vh - 105px)); min-height: min(700px, calc(100svh - 105px)); overflow: hidden; display: flex; align-items: center; border: 2px solid var(--ink); background: #171721; color: #fff; isolation: isolate; }
+.home-hero { position: relative; min-height: clamp(490px, calc(80svh - 130px), 650px); overflow: hidden; display: flex; align-items: center; border: 2px solid var(--ink); background: #171721; color: #fff; isolation: isolate; }
 .home-hero-image, .home-hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .home-hero-image { z-index: 0; object-fit: cover; object-position: center 30%; filter: saturate(1.22) contrast(1.04); }
 .home-hero-shade { z-index: 1; background: linear-gradient(90deg, rgba(15,15,25,.84) 0%, rgba(15,15,25,.65) 43%, rgba(15,15,25,.16) 100%); }
@@ -50,6 +50,21 @@ button:focus-visible, a:focus-visible, label:focus-within, select:focus-visible 
 .home-sticker span { font-size: 8px; font-weight: 700; letter-spacing: 1px; }
 .home-sticker strong { font-family: var(--serif); font-size: 20px; line-height: .96; }
 .home-index { position: absolute; z-index: 3; right: 17px; bottom: 14px; color: #fff; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.home-how { padding: 27px 0 40px; }
+.home-how-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 15px; }
+.home-how-heading .eyebrow { margin: 0 0 5px; color: var(--blue); }
+.home-how-heading h2 { margin: 0; font-family: var(--serif); font-size: 24px; font-weight: 400; }
+.home-step-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.home-step { min-height: 188px; display: flex; flex-direction: column; align-items: flex-start; padding: 15px; border: 2px solid var(--ink); }
+.home-step-clothes { background: var(--yellow); }
+.home-step-photo { background: var(--pink); }
+.home-step-outfits { background: var(--cyan); }
+.home-step-number { margin-bottom: 13px; font-family: var(--serif); font-size: 22px; line-height: 1; }
+.home-step h3 { margin-bottom: 6px; font-size: 15px; font-weight: 700; }
+.home-step p { max-width: 290px; margin: 0 0 15px; color: #37353d; font-size: 11px; line-height: 1.45; }
+.home-step-action { display: inline-flex; align-items: center; gap: 9px; margin-top: auto; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 10px; font-weight: 700; cursor: pointer; }
+.home-step-action span { font-size: 14px; transition: transform .15s ease; }
+.home-step-action:hover span { transform: translate(2px, -2px); }
 .nav-icon { font-size: 16px; width: 19px; text-align: center; }
 .sidebar-bottom { margin-top: auto; }
 .profile-mini { display: flex; align-items: center; gap: 9px; border-top: 1px solid rgba(255,255,255,.35); padding: 17px 3px 0; }
@@ -225,6 +240,10 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .home-hero-content { width: 100%; padding: 35px 28px 44px; }
   .home-hero h1 { font-size: 52px; }
   .home-sticker { top: 18px; right: 18px; }
+  .home-step-grid { gap: 8px; }
+  .home-step { min-height: 205px; padding: 11px; }
+  .home-step h3 { font-size: 13px; }
+  .home-step p { font-size: 10px; }
 }
 @media (max-width: 520px) {
   .main-content { padding: 0 12px; }
@@ -258,6 +277,13 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .home-motto { font-size: 15px; }
   .home-sticker { top: 13px; right: 13px; padding: 10px 11px 9px; }
   .home-sticker strong { font-size: 16px; }
+  .home-how { padding: 22px 0 30px; }
+  .home-how-heading { display: block; }
+  .home-how-heading h2 { font-size: 21px; }
+  .home-step-grid { grid-template-columns: 1fr; gap: 9px; }
+  .home-step { min-height: 0; padding: 14px; }
+  .home-step-number { margin-bottom: 9px; }
+  .home-step p { max-width: 360px; margin-bottom: 12px; }
   .fit-tools { gap: 7px; }
   .fit-tab { padding: 6px; font-size: 8px; }
   .scale-control { flex: 1 1 120px; }

@@ -119,6 +119,15 @@ document.querySelector("#outfitsStep").addEventListener("click", () => {
 });
 document.querySelector("#demoButton").addEventListener("click", loadDemoWardrobe);
 document.querySelector("#homeGetStarted").addEventListener("click", () => switchAppView("wardrobe"));
+document.querySelector("#stepAddClothes").addEventListener("click", () => {
+  switchAppView("wardrobe");
+  document.querySelector("#wardrobeTitle").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+document.querySelector("#stepAddPhoto").addEventListener("click", () => {
+  switchAppView("wardrobe");
+  elements.personUpload.click();
+});
+document.querySelector("#stepSeeOutfits").addEventListener("click", () => switchAppView("outfits"));
 
 function switchAppView(view) {
   const views = { home: "homeView", wardrobe: "wardrobeView", outfits: "outfitsView" };
