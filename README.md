@@ -2,6 +2,8 @@
 
 Standalone English-language virtual wardrobe and outfit recommender prototype.
 
+The Home tab introduces the app's vision: find outfit inspiration for the "nothing to wear" moments without trying on every piece. Its motto is "Be your own stylist."
+
 ## Run
 
 Run `bash start.sh` with Python 3.12. The script installs the local CPU dependencies into `.deps/` on first run, then starts the app at `http://localhost:8000`. The cutout model downloads on the first garment upload.

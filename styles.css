@@ -33,6 +33,23 @@ button:focus-visible, a:focus-visible, label:focus-within, select:focus-visible 
 .nav-item { width: 100%; border: 0; background: transparent; font-family: var(--sans); text-align: left; cursor: pointer; }
 .nav-item.active { background: var(--green); color: var(--ink); }
 .tab-view[hidden] { display: none; }
+.home-hero { position: relative; min-height: min(700px, calc(100vh - 105px)); min-height: min(700px, calc(100svh - 105px)); overflow: hidden; display: flex; align-items: center; border: 2px solid var(--ink); background: #171721; color: #fff; isolation: isolate; }
+.home-hero-image, .home-hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.home-hero-image { z-index: -2; object-fit: cover; object-position: center 28%; }
+.home-hero-shade { z-index: -1; background: rgba(15, 15, 25, .58); }
+.home-hero-content { width: min(650px, 72%); padding: 52px 0 52px 58px; }
+.home-kicker { display: flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.4px; }
+.home-kicker span { width: 9px; height: 9px; background: var(--pink); border: 1px solid #fff; transform: rotate(45deg); }
+.home-hero h1 { margin: 0 0 20px; color: #fff; font-family: var(--serif); font-size: 64px; line-height: 1.03; font-weight: 400; }
+.home-copy { max-width: 440px; margin-bottom: 21px; color: #f0eff5; font-size: 15px; line-height: 1.55; }
+.home-motto { display: inline-block; margin: 0 0 23px; padding: 8px 11px 6px; background: var(--green); color: var(--ink); font-family: var(--serif); font-size: 18px; line-height: 1.1; }
+.home-cta { display: inline-flex; align-items: center; gap: 20px; min-height: 48px; padding: 0 16px; border: 2px solid var(--ink); background: var(--pink); color: var(--ink); font-size: 12px; font-weight: 700; cursor: pointer; }
+.home-cta:hover { background: var(--yellow); }
+.home-cta span { font-size: 17px; }
+.home-sticker { position: absolute; top: 42px; right: 42px; display: grid; gap: 5px; padding: 13px 15px 11px; border: 2px solid var(--ink); background: var(--yellow); color: var(--ink); transform: rotate(5deg); }
+.home-sticker span { font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.home-sticker strong { font-family: var(--serif); font-size: 20px; line-height: .96; }
+.home-index { position: absolute; right: 17px; bottom: 14px; color: #fff; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
 .nav-icon { font-size: 16px; width: 19px; text-align: center; }
 .sidebar-bottom { margin-top: auto; }
 .profile-mini { display: flex; align-items: center; gap: 9px; border-top: 1px solid rgba(255,255,255,.35); padding: 17px 3px 0; }
@@ -190,12 +207,12 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
 }
 @media (max-width: 790px) {
   .app-shell { display: block; }
-  .sidebar { position: static; height: auto; min-height: 0; padding: 12px 18px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
-  .brand { font-size: 22px; padding: 0; }
+  .sidebar { position: static; height: auto; min-height: 0; padding: 12px 18px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 22px; padding: 0; gap: 7px; }
   .brand-mark { width: 27px; height: 27px; font-size: 16px; }
   .nav-label, .sidebar-bottom { display: none; }
-  .main-nav { display: flex; gap: 4px; }
-  .nav-item { width: auto; padding: 8px 9px; font-size: 10px; }
+  .main-nav { display: flex; flex: 1; min-width: 0; justify-content: flex-end; gap: 3px; }
+  .nav-item { width: auto; padding: 8px 7px; gap: 5px; font-size: 9px; white-space: nowrap; }
   .nav-icon { font-size: 14px; }
   .main-content { padding: 0 17px; }
   .topbar { height: 49px; }
@@ -204,10 +221,19 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .recommendations { min-height: 0; }
   .outfit-list { max-height: 440px; }
   .tryon-stage { height: clamp(320px, 70vw, 520px); }
+  .home-hero { min-height: 590px; min-height: max(590px, calc(100svh - 140px)); align-items: flex-end; }
+  .home-hero-content { width: 100%; padding: 35px 28px 44px; }
+  .home-hero h1 { font-size: 52px; }
+  .home-sticker { top: 18px; right: 18px; }
 }
 @media (max-width: 520px) {
   .main-content { padding: 0 12px; }
   .sidebar { padding: 10px 12px; }
+  .brand { gap: 5px; font-size: 19px; }
+  .brand-mark { flex: 0 0 24px; width: 24px; height: 24px; font-size: 14px; }
+  .main-nav { gap: 1px; }
+  .nav-item { padding: 7px 5px; font-size: 8px; }
+  .nav-icon { display: none; }
   .today-label { display: none; }
   .breadcrumb { font-size: 8px; }
   .page-heading { align-items: start; flex-direction: column; gap: 12px; }
@@ -222,6 +248,16 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
   .demo-button { margin-left: auto; padding: 6px 8px; }
   .tryon-section { padding: 11px; }
   .tryon-stage { height: 112vw; max-height: 490px; min-height: 340px; }
+  .home-hero { min-height: max(590px, calc(100svh - 125px)); align-items: flex-end; }
+  .home-hero-image { object-position: 58% center; }
+  .home-hero-shade { background: rgba(15, 15, 25, .66); }
+  .home-hero-content { padding: 30px 19px 36px; }
+  .home-kicker { font-size: 8px; letter-spacing: 1px; }
+  .home-hero h1 { font-size: 39px; }
+  .home-copy { font-size: 13px; }
+  .home-motto { font-size: 15px; }
+  .home-sticker { top: 13px; right: 13px; padding: 10px 11px 9px; }
+  .home-sticker strong { font-size: 16px; }
   .fit-tools { gap: 7px; }
   .fit-tab { padding: 6px; font-size: 8px; }
   .scale-control { flex: 1 1 120px; }

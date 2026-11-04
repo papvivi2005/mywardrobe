@@ -118,9 +118,10 @@ document.querySelector("#outfitsStep").addEventListener("click", () => {
   document.querySelector("#recommendationsTitle").scrollIntoView({ behavior: "smooth", block: "center" });
 });
 document.querySelector("#demoButton").addEventListener("click", loadDemoWardrobe);
+document.querySelector("#homeGetStarted").addEventListener("click", () => switchAppView("wardrobe"));
 
 function switchAppView(view) {
-  const views = { wardrobe: "wardrobeView", outfits: "outfitsView" };
+  const views = { home: "homeView", wardrobe: "wardrobeView", outfits: "outfitsView" };
   for (const [name, panelId] of Object.entries(views)) {
     const active = name === view;
     document.getElementById(panelId).hidden = !active;
@@ -128,7 +129,7 @@ function switchAppView(view) {
     tab.classList.toggle("active", active);
     tab.setAttribute("aria-selected", String(active));
   }
-  document.querySelector("#breadcrumbView").textContent = view === "wardrobe" ? "WARDROBE" : "OUTFIT IDEAS";
+  document.querySelector("#breadcrumbView").textContent = { home: "HOME", wardrobe: "WARDROBE", outfits: "OUTFIT IDEAS" }[view];
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
