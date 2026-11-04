@@ -22,7 +22,7 @@ const palette = {
   multicolor: { label: "Multicolor", hex: "#82947f" },
 };
 
-const COLOR_DETECTION_VERSION = 4;
+const COLOR_DETECTION_VERSION = 5;
 const styleLabels = { casual: "Casual", work: "Work", evening: "Evening", sport: "Sport" };
 const wardrobe = { tops: [], bottoms: [], shoes: [] };
 let currentPhotoUrl = null;
@@ -311,9 +311,9 @@ function classifyColor(red, green, blue) {
     else hue = 60 * ((red - green) / delta + 4);
   }
   if (hue < 0) hue += 360;
-  if (lightness < 0.14) return "black";
+  if (lightness < 0.14 && saturation < 0.2) return "black";
   if (hue >= 20 && hue <= 65 && saturation >= 0.08 && saturation < 0.28 && lightness > 0.78) return "cream";
-  if (saturation < 0.12) return lightness > 0.9 ? "white" : lightness < 0.22 ? "black" : "gray";
+  if (saturation < 0.07) return lightness > 0.9 ? "white" : lightness < 0.22 ? "black" : "gray";
   if (hue >= 18 && hue <= 55 && saturation < 0.34 && lightness > 0.48) return "beige";
   if (hue >= 12 && hue <= 42 && lightness < 0.4) return "brown";
   if (hue >= 12 && hue <= 42) return "orange";
