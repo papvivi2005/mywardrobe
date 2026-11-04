@@ -503,7 +503,7 @@ function renderOutfits() {
   const outfits = getOutfits();
   updateGettingStarted(outfits);
   document.querySelector("#comboCount").textContent = outfits.length;
-  document.querySelector("#resultsLabel").textContent = `${outfits.length} ${outfits.length === 1 ? "outfit" : "outfits"}`;
+  document.querySelector("#resultsLabel").textContent = "ALL OUTFITS";
   elements.outfitList.replaceChildren();
   if (!outfits.length) {
     const empty = document.createElement("div");
@@ -526,7 +526,7 @@ function renderOutfits() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `outfit-card${outfit.id === selectedOutfitId ? " selected" : ""}`;
-    button.setAttribute("aria-label", `Outfit ${index + 1}, ${outfit.score}% match`);
+    button.setAttribute("aria-label", `Select ${outfitName(outfit, index)}`);
     button.addEventListener("click", () => selectOutfit(outfit));
     const thumbs = document.createElement("span");
     thumbs.className = "outfit-thumbs";
@@ -545,10 +545,7 @@ function renderOutfits() {
     subtitle.className = "outfit-subtitle";
     subtitle.textContent = `${outfit.top.name} · ${outfit.bottom.name} · ${outfit.shoes.name}`;
     details.append(title, subtitle);
-    const score = document.createElement("span");
-    score.className = "score";
-    score.textContent = `${outfit.score}%`;
-    button.append(thumbs, details, score);
+    button.append(thumbs, details);
     elements.outfitList.append(button);
   }
   const selected = outfits.find((outfit) => outfit.id === selectedOutfitId);
@@ -590,7 +587,6 @@ function updateOutfitPreview(outfit, index) {
   elements.bottomOverlay.classList.add("visible");
   elements.shoesOverlay.classList.add("visible");
   document.querySelector("#selectedLookName").textContent = outfitName(outfit, index);
-  document.querySelector("#selectedLookScore").textContent = `${outfit.score}% match`;
   document.querySelector("#previewLabel").textContent = "OUTFIT PREVIEW";
 }
 
@@ -600,7 +596,6 @@ function clearOutfitPreview() {
     overlay.removeAttribute("src");
   }
   document.querySelector("#selectedLookName").textContent = "Select an outfit";
-  document.querySelector("#selectedLookScore").textContent = "—";
 }
 
 function openWardrobeDatabase() {

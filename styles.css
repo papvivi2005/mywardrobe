@@ -144,8 +144,7 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
 .preview-chip { position: absolute; top: 11px; left: 11px; z-index: 5; display: flex; align-items: center; gap: 6px; border: 1px solid var(--ink); border-radius: 2px; background: var(--green); padding: 6px 8px; color: var(--ink); font-size: 8px; font-weight: 700; letter-spacing: .75px; }
 .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); }
 .clear-photo { position: absolute; z-index: 6; top: 9px; right: 9px; border: 0; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; color: #39433d; background: rgba(255,255,255,.9); font-size: 17px; line-height: 1; }
-.preview-caption { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 2px 0; color: #747b73; font-size: 10px; }
-.preview-caption span:last-child { color: #597960; font-weight: 700; }
+.preview-caption { display: flex; align-items: center; gap: 10px; padding: 10px 2px 0; color: #747b73; font-size: 10px; }
 .fit-tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 2px 0; }
 .fit-tabs { display: flex; gap: 3px; padding: 3px; border: 1.5px solid var(--ink); border-radius: 3px; background: var(--yellow); }
 .fit-tab { border: 0; border-radius: 2px; padding: 6px 8px; background: transparent; color: #48464a; font-size: 9px; font-weight: 700; cursor: pointer; }
@@ -194,7 +193,6 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 
 .outfit-details { min-width: 0; }
 .outfit-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; font-weight: 700; }
 .outfit-subtitle { display: block; margin-top: 4px; color: #93978f; font-size: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.score { color: #dc3e0c; font-size: 10px; font-weight: 700; white-space: nowrap; }
 .empty-state { text-align: center; padding: 28px 12px 24px; color: #7d847b; }
 .empty-symbol { display: grid; place-items: center; width: 34px; height: 34px; margin: 0 auto 10px; border: 1px solid #e5dfc9; border-radius: 50%; color: #bd9852; }
 .empty-state strong { display: block; color: #525c52; font-family: var(--serif); font-weight: 500; font-size: 15px; }
